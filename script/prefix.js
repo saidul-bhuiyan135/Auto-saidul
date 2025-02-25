@@ -1,39 +1,28 @@
-module.exports.config = {
-  name: "prefix",
-  version: "1.0.0",
-  hasPermssion: 0,
-  credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-  description: "given prefix detail",
-  commandCategory: "Dành cho Admin",
-  usages: "",
-  cooldowns: 5,
-};
+module.exports = {
+ config: {
+	 name: "prefix",
+	 version: "1.0",
+	 author: "Tokodori_Frtiz",//remodified by cliff
+	 countDown: 5,
+	 role: 0,
+	 shortDescription: "no prefix",
+	 longDescription: "no prefix",
+	 category: "auto 🪐",
+ },
 
-module.exports.handleEvent = async ({ event, api, Threads }) => {
-  var { threadID, messageID, body, senderID } = event;
-  //if (senderID == global.data.botID) return;
-  if ((this.config.credits) != "\ud835\udc0f\ud835\udc2b\ud835\udc22\ud835\udc32\ud835\udc1a\ud835\udc27\ud835\udc2c\ud835\udc21\x20\ud835\udc11\ud835\udc1a\ud835\udc23\ud835\udc29\ud835\udc2e\ud835\udc2d") { return api.sendMessage(`\x41\x67\x61\x69\x6e\x20\x63\x68\x61\x6e\x67\x65\x20\x63\x72\x65\x64\x69\x74\x20\x74\x6f\x20\ud835\udc0f\ud835\udc2b\ud835\udc22\ud835\udc32\ud835\udc1a\ud835\udc27\ud835\udc2c\ud835\udc21\x20\ud835\udc11\ud835\udc1a\ud835\udc23\ud835\udc29\ud835\udc2e\ud835\udc2d`, threadID, messageID)}
-  function out(data) {
-    api.sendMessage(data, threadID, messageID)
-  }
-  var dataThread = (await Threads.getData(threadID));
-  var data = dataThread.data; 
-  const threadSetting = global.data.threadData.get(parseInt(threadID)) || {};
-  var arr = ["mpre","mprefix","prefix", "dấu lệnh", "prefix của bot là gì","daulenh", "duong", "what prefix", "freefix", "what is the prefix", "bot dead", "bots dead", "where prefix", "what is bot", "what prefix bot", "how to use bot" ,"how use bot", "where are the bots","bot not working","bot is offline","where prefix","prefx","prfix","prifx","perfix","bot not talking","where is bot"];
-  arr.forEach(i => {
-    let str = i[0].toUpperCase() + i.slice(1);
-    if (body === i.toUpperCase() | body === i | str === body) {
-const prefix = threadSetting.PREFIX || global.config.PREFIX;
-      if (data.PREFIX == null) {
-        return out(`This Is My Prefix ⇉ [ ${prefix} ]\n💝🥀𝐎𝐖𝐍𝐄𝐑:- ☞𝗔𝗺𝗶𝗻𝘂𝗹 𝗦𝗼𝗿𝗱𝗮𝗿☜ 💫\n🖤𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 𝗔𝗺𝗶𝗻𝘂𝗹 𝗦𝗼𝗿𝗱𝗮𝗿🖤\n😳𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝🤓:- ☞ www.facebook.com/br4nd.abir.your.next.bf.jan\n
-👋For Any Kind Of Help Contact On Telegram  Username 👉 @aminulsordar😇`)
-      }
-      else return out('️️️️️️️️️️️️️️️️️️️️️️️️️️️This Is My Prefix ⇉ [ ${prefix} ]  \n💝🥀𝐎𝐖𝐍𝐄𝐑:- ☞𝗔𝗺𝗶𝗻𝘂𝗹 𝗦𝗼𝗿𝗱𝗮𝗿☜ 💫\n🖤𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 𝗔𝗺𝗶𝗻𝘂𝗹 𝗦𝗼𝗿𝗱𝗮𝗿🖤\n😳𝐇𝐢𝐬 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐢𝐝🤓:- ☞ www.facebook.com/br4nd.abir.your.next.bf.jan\n👋For Any Kind Of Help Contact On Telegram  Username 👉 @aminulsordar😇' + data.PREFIX)
-    }
-
-  });
-};
-
-module.exports.run = async({ event, api }) => {
-    return api.sendMessage("error", event.threadID)
+ onStart: async function(){}, 
+ onChat: async function({ event, message, getLang }) {
+ if (event.body && event.body.toLowerCase() === "prefix") {
+ return message.reply({
+ body: `
+𝗠𝗬 𝗣𝗥𝗘𝗙𝗜𝗫 𝗜𝗦  [  /  ]\n
+𝗦𝗢𝗠𝗘 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 𝗧𝗛𝗔𝗧 𝗠𝗔𝗬 𝗛𝗘𝗟𝗣 𝗬𝗢𝗨:
+➥ /help [number of page] -> see commands
+➥ /sim [message] -> talk to bot
+➥ /callad [message] -> report any problem encountered
+➥ /help [command] -> information and usage of command\n\n𝗛𝗔𝗩𝗘 𝗙𝗨𝗡 𝗨𝗦𝗜𝗡𝗚 𝗜𝗧 𝗘𝗡𝗝𝗢𝗬!🪐\n𝗕𝗢𝗧 𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗥:𝗦𝗔𝗜𝗗𝗨𝗟`,
+ attachment: await global.utils.getStreamFromURL("https://i.imgur.com/M4luPbE.gif")
+ });
+ }
+ }
 }
